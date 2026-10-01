@@ -1,0 +1,49 @@
+{
+  "name": "cell-run-history",
+  "displayName": "Cell Run History",
+  "description": "JupyterLab-style 'Last executed at … in …' status for notebook cells, with the last runs on hover.",
+  "version": "0.4.0",
+  "publisher": "local",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Davtax/cell-run-history.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Davtax/cell-run-history/issues"
+  },
+  "homepage": "https://github.com/Davtax/cell-run-history#readme",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Notebooks"
+  ],
+  "extensionKind": [
+    "workspace",
+    "ui"
+  ],
+  "activationEvents": [
+    "onNotebook:jupyter-notebook"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Cell Run History",
+      "properties": {
+        "cellRunHistory.maxRuns": {
+          "type": "integer",
+          "default": 5,
+          "minimum": 1,
+          "maximum": 50,
+          "description": "Number of runs kept and shown per notebook cell."
+        },
+        "cellRunHistory.recordTiming": {
+          "type": "boolean",
+          "default": true,
+          "description": "Save the timing of each run in the cell metadata (same format as JupyterLab's execute-time extension), so the last run is shown when the notebook is reopened in VS Code or JupyterLab."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+/*
+ * Optional: hide VS Code's built-in cell execution status (check mark / spinner and timer), keeping only the
+ * Cell Run History item, which is the last item on the left of each cell status bar.
+ * VS Code has no setting for this; load the file with a custom-CSS extension (see README).
+ */
+.monaco-workbench .notebookOverlay .cell-statusbar-container .cell-contributed-items-left > .cell-status-item:not(:last-child) {
+  display: none !important;
+}
